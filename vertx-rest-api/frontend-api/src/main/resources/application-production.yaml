@@ -1,0 +1,6 @@
+### APP ###
+app:
+  # Integrations
+  integrations:
+    backend:
+      url: "${APP_INTEGRATIONS_BACKEND_URL}/api/greetings"

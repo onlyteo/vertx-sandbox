@@ -16,3 +16,7 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "vertx-sandbox"
+
+include(":vertx-rest-api:frontend")
+include(":vertx-rest-api:frontend-api")
+include(":vertx-rest-api:backend")

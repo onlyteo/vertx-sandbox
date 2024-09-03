@@ -1,0 +1,5 @@
+### APP ###
+app:
+  # Resources
+  resources:
+    prefixes-file: /data/prefixes.csv

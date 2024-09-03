@@ -1,10 +1,13 @@
 ### VERSIONS ###
 [versions]
-kotlin = "2.0.10"
+kotlin = "2.0.20"
 vertx = "4.5.9"
-spring-boot = "3.3.2"
+spring-boot = "3.3.3"
 spring-dependencies = "1.1.6"
 jackson = "2.17.2"
+slf4j = "2.0.13" # Sync with Logback
+logback = "1.5.6"
+hoplite = "2.7.5"
 webjars-jquery = "3.7.1"
 webjars-bootstrap = "5.3.3"
 webjars-popper = "2.11.7"
@@ -33,7 +36,10 @@ git-properties = { id = "com.gorylenko.gradle-git-properties", version.ref = "gi
 kotlin-reflect = { module = "org.jetbrains.kotlin:kotlin-reflect" }
 kotlin-test-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit" }
 # Vert.x
-vertx = { module = "io.vertx:vertx-lang-kotlin", version.ref = "vertx" }
+vertx-lang-kotlin = { module = "io.vertx:vertx-lang-kotlin", version.ref = "vertx" }
+vertx-web = { module = "io.vertx:vertx-web", version.ref = "vertx" }
+vertx-web-client = { module = "io.vertx:vertx-web-client", version.ref = "vertx" }
+vertx-config-yaml = { module = "io.vertx:vertx-config-yaml", version.ref = "vertx" }
 # Spring Boot
 spring-boot-starter-web = { module = "org.springframework.boot:spring-boot-starter-web" }
 spring-boot-starter-jdbc = { module = "org.springframework.boot:spring-boot-starter-jdbc" }
@@ -45,6 +51,13 @@ spring-security-oauth2-authorization-server = { module = "org.springframework.se
 jackson-module-kotlin = { module = "com.fasterxml.jackson.module:jackson-module-kotlin", version.ref = "jackson" }
 jackson-datatype-jsr310 = { module = "com.fasterxml.jackson.datatype:jackson-datatype-jsr310", version.ref = "jackson" }
 jackson-dataformat-csv = { module = "com.fasterxml.jackson.dataformat:jackson-dataformat-csv", version.ref = "jackson" }
+# Logback
+jul-to-slf4j = { module = "org.slf4j:jul-to-slf4j", version.ref = "slf4j" }
+log4j-over-slf4j = { module = "org.slf4j:log4j-over-slf4j", version.ref = "slf4j" }
+# Logback
+logback-classic = { module = "ch.qos.logback:logback-classic", version.ref = "logback" }
+# Hoplite
+hoplite-yaml = { module = "com.sksamuel.hoplite:hoplite-yaml", version.ref = "hoplite" }
 # Webjars
 webjars-jquery = { module = "org.webjars:jquery", version.ref = "webjars-jquery" }
 webjars-bootstrap = { module = "org.webjars:bootstrap", version.ref = "webjars-bootstrap" }
@@ -64,9 +77,22 @@ mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
 
 ### BUNDLES ###
 [bundles]
+vertx-webapp = [
+    "vertx-web",
+    "vertx-config-yaml",
+    "vertx-lang-kotlin"
+]
 jackson = [
     "jackson-module-kotlin",
     "jackson-datatype-jsr310"
+]
+logging = [
+    "jul-to-slf4j",
+    "log4j-over-slf4j",
+    "logback-classic"
+]
+hoplite = [
+    "hoplite-yaml"
 ]
 webjars = [
     "webjars-jquery",
