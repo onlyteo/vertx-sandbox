@@ -1,8 +1,8 @@
 # Vert.x Sandbox
 
-[![Kotlin](https://img.shields.io/badge/kotlin-2.0.10-8d53f9.svg?logo=kotlin&logoColor=8d53f9)](http://kotlinlang.org)
-[![TypeScript](https://img.shields.io/badge/typescript-5.2.2-3178c6.svg?logo=typescript&logoColor=3178c6)](https://www.typescriptlang.org)
+[![Kotlin](https://img.shields.io/badge/kotlin-2.0.20-8d53f9.svg?logo=kotlin&logoColor=8d53f9)](http://kotlinlang.org)
 [![Vert.x](https://img.shields.io/badge/vertx-4.5.9-782b90.svg?logo=java&logoColor=fdb71c)](https://microprofile.io)
+[![TypeScript](https://img.shields.io/badge/typescript-5.2.2-3178c6.svg?logo=typescript&logoColor=3178c6)](https://www.typescriptlang.org)
 [![React](https://img.shields.io/badge/react-18.3.1-58c4dc.svg?logo=react&logoColor=58c4dc)](https://react.dev)
 [![Gradle](https://img.shields.io/badge/gradle-stable-209bc4.svg?logo=gradle&logoColor=209bc4)](https://gradle.org)
 [![Gradle](https://img.shields.io/badge/node.js-stable-417e38.svg?logo=nodedotjs&logoColor=417e38)](https://nodejs.org)
