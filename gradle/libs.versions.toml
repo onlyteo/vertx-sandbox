@@ -1,9 +1,6 @@
 ### VERSIONS ###
 [versions]
-kotlin = "2.0.20"
 vertx = "4.5.9"
-spring-boot = "3.3.3"
-spring-dependencies = "1.1.6"
 jackson = "2.17.2"
 slf4j = "2.0.13" # Sync with Logback
 logback = "1.5.6"
@@ -16,19 +13,6 @@ webjars-fontawesome = "6.5.2"
 junit = "5.10.3"
 kotest = "5.9.1"
 mockk = "1.13.12"
-google-cloud-jib = "3.4.3"
-git-properties = "2.4.2"
-
-### PLUGINS ###
-[plugins]
-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
-kotlin-allopen = { id = "org.jetbrains.kotlin.plugin.allopen", version.ref = "kotlin" }
-kotlin-spring = { id = "org.jetbrains.kotlin.plugin.spring", version.ref = "kotlin" }
-kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
-spring-boot = { id = "org.springframework.boot", version.ref = "spring-boot" }
-spring-dependencies = { id = "io.spring.dependency-management", version.ref = "spring-dependencies" }
-google-cloud-jib = { id = "com.google.cloud.tools.jib", version.ref = "google-cloud-jib" }
-git-properties = { id = "com.gorylenko.gradle-git-properties", version.ref = "git-properties" }
 
 ### LIBRARIES ###
 [libraries]

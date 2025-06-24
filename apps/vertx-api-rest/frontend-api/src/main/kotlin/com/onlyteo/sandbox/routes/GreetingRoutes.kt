@@ -1,13 +1,11 @@
 package com.onlyteo.sandbox.routes
 
 import com.onlyteo.sandbox.config.buildLogger
-import com.onlyteo.sandbox.context.ApplicationContext
 import com.onlyteo.sandbox.model.Person
 import com.onlyteo.sandbox.service.GreetingService
 import io.vertx.core.json.Json
 import io.vertx.ext.web.Router
 
-context(ApplicationContext)
 fun Router.greetingRoutes(greetingService: GreetingService) {
     post("/api/greetings")
         .consumes("application/json")

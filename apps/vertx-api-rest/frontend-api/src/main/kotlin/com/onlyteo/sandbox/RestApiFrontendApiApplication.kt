@@ -29,7 +29,7 @@ class MainVerticle : AbstractVerticle() {
             configureJackson()
 
             val webClient = WebClient.create(vertx)
-            val greetingService = GreetingService(webClient)
+            val greetingService = GreetingService(applicationProperties, webClient)
             val router = vertx.createRouter(greetingService)
 
             val serverProperties = loadProperties<ServerPropertiesHolder>().server
