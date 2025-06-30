@@ -3,7 +3,7 @@
 vertx = "4.5.9"
 jackson = "2.17.2"
 slf4j = "2.0.17" # Sync with Logback
-logback = "1.5.6"
+logback = "1.5.18"
 hoplite = "2.9.0"
 webjars-jquery = "3.7.1"
 webjars-bootstrap = "5.3.7"
