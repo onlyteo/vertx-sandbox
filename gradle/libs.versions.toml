@@ -12,7 +12,7 @@ webjars-locator = "0.52"
 webjars-fontawesome = "6.5.2"
 junit = "5.13.2"
 kotest = "5.9.1"
-mockk = "1.13.12"
+mockk = "1.14.5"
 
 ### LIBRARIES ###
 [libraries]
