@@ -1,6 +1,6 @@
 ### VERSIONS ###
 [versions]
-vertx = "5.0.1"
+vertx = "5.0.2"
 jackson = "2.19.1"
 slf4j = "2.0.17" # Sync with Logback
 logback = "1.5.18"
@@ -21,6 +21,7 @@ kotlin-reflect = { module = "org.jetbrains.kotlin:kotlin-reflect" }
 kotlin-test-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit" }
 # Vert.x
 vertx-lang-kotlin = { module = "io.vertx:vertx-lang-kotlin", version.ref = "vertx" }
+vertx-launcher-application = { module = "io.vertx:vertx-launcher-application", version.ref = "vertx" }
 vertx-web = { module = "io.vertx:vertx-web", version.ref = "vertx" }
 vertx-web-client = { module = "io.vertx:vertx-web-client", version.ref = "vertx" }
 vertx-config-yaml = { module = "io.vertx:vertx-config-yaml", version.ref = "vertx" }
@@ -64,7 +65,8 @@ mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
 vertx-webapp = [
     "vertx-web",
     "vertx-config-yaml",
-    "vertx-lang-kotlin"
+    "vertx-lang-kotlin",
+    "vertx-launcher-application"
 ]
 jackson = [
     "jackson-module-kotlin",

@@ -3,37 +3,32 @@ package com.onlyteo.sandbox
 import com.onlyteo.sandbox.config.buildLogger
 import com.onlyteo.sandbox.config.configureJackson
 import com.onlyteo.sandbox.config.configureLogging
-import com.onlyteo.sandbox.config.loadProperties
 import com.onlyteo.sandbox.context.ApplicationContext
-import com.onlyteo.sandbox.properties.ApplicationPropertiesHolder
-import com.onlyteo.sandbox.properties.ServerPropertiesHolder
-import com.onlyteo.sandbox.repository.PrefixRepository
 import com.onlyteo.sandbox.routes.createRouter
-import com.onlyteo.sandbox.service.GreetingService
-import io.vertx.core.AbstractVerticle
-import io.vertx.core.Launcher
+import io.vertx.core.Future
+import io.vertx.core.VerticleBase
+import io.vertx.core.Vertx
+
 
 fun main() {
-    Launcher.executeCommand("run", MainVerticle::class.java.name)
+    val applicationContext = ApplicationContext()
+    Vertx.vertx()
+        .deployVerticle(MainVerticle(applicationContext))
 }
 
-class MainVerticle : AbstractVerticle() {
+class MainVerticle(private val applicationContext: ApplicationContext) : VerticleBase() {
 
     private val logger = buildLogger
 
-    override fun start() {
-        val applicationProperties = loadProperties<ApplicationPropertiesHolder>().app
-        with(ApplicationContext(applicationProperties)) {
+    override fun start(): Future<*> {
+        with(applicationContext) {
 
             configureLogging()
             configureJackson()
 
-            val prefixRepository = PrefixRepository(properties.resources.prefixesFile)
-            val greetingService = GreetingService(prefixRepository)
             val router = vertx.createRouter(greetingService)
 
-            val serverProperties = loadProperties<ServerPropertiesHolder>().server
-            vertx.createHttpServer()
+            return vertx.createHttpServer()
                 .requestHandler(router)
                 .listen(serverProperties.deployment.port)
                 .onSuccess {
